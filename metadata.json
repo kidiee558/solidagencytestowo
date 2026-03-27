@@ -1,5 +1,0 @@
-{
-  "name": "Fluid Background",
-  "description": "A beautiful 3D fluid background using Three.js and custom shaders.",
-  "requestFramePermissions": []
-}
