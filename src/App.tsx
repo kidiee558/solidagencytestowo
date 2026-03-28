@@ -571,45 +571,40 @@ const GridTunnel = () => {
     <div className="absolute inset-0 overflow-hidden pointer-events-none z-0 bg-[#0e1733]">
       <style>{`
         .cyber-grid-container {
-          --grid: 8rem;
+          --grid: 6rem;
           width: 100%;
           height: 100%;
           position: absolute;
           top: 0;
           left: 0;
-          transform-style: preserve-3d;
           perspective: 100rem;
         }
         
         .cyber-plane {
-          --dir: 1;
           width: 300%;
           height: 150%;
           min-height: 70rem;
           position: absolute;
           bottom: 0;
           left: 50%;
-          transform-style: preserve-3d;
           transform-origin: bottom center;
           transform: translateX(-50%) rotateX(85deg);
         }
         
         .cyber-plane:last-child {
-          --dir: -1;
           top: 0;
           transform-origin: top center;
           transform: translateX(-50%) rotateX(-85deg);
         }
         
-        .cyber-plane > * {
-          transform-style: preserve-3d;
+        .cyber-plane > .grid {
           height: 100%;
           width: 100%;
           position: absolute;
         }
         
-        .cyber-plane > *::before,
-        .cyber-plane > *::after {
+        .cyber-plane > .grid::before,
+        .cyber-plane > .grid::after {
           content: '';
           display: block;
           position: absolute;
@@ -619,37 +614,27 @@ const GridTunnel = () => {
           left: 0;
         }
 
-        .cyber-plane > *::before {
+        .cyber-plane > .grid::before {
           background-image: 
-            repeating-linear-gradient(to left, rgba(141, 50, 252, 0.6), rgba(141, 50, 252, 0.6) 2px, transparent 2px, transparent var(--grid)), 
-            repeating-linear-gradient(to bottom, rgba(141, 50, 252, 0.6), rgba(141, 50, 252, 0.6) 2px, transparent 2px, transparent var(--grid));
+            repeating-linear-gradient(to left, rgba(141, 50, 252, 0.4), rgba(141, 50, 252, 0.4) 2px, transparent 2px, transparent var(--grid)), 
+            repeating-linear-gradient(to bottom, rgba(141, 50, 252, 0.4), rgba(141, 50, 252, 0.4) 2px, transparent 2px, transparent var(--grid));
         }
 
-        .cyber-plane > *::after {
-          background-image: linear-gradient(to bottom, #0e1733 var(--grid), rgba(14, 23, 51, 0));
-          z-index: 1;
-          transform: translateZ(1px);
+        .cyber-plane > .grid::after {
+          background-image: linear-gradient(to bottom, #0e1733 5%, rgba(14, 23, 51, 0) 80%);
         }
         
-        .cyber-plane:last-child > *::after {
-          background-image: linear-gradient(to top, #0e1733 var(--grid), rgba(14, 23, 51, 0));
-        }
-        
-        .cyber-plane .glow {
-          filter: blur(1rem);
-          z-index: 1;
-          mix-blend-mode: plus-lighter;
+        .cyber-plane:last-child > .grid::after {
+          background-image: linear-gradient(to top, #0e1733 5%, rgba(14, 23, 51, 0) 80%);
         }
       `}</style>
       
       <div className="cyber-grid-container">
         <div className="cyber-plane">
           <div className="grid"></div>
-          <div className="glow"></div>
         </div>
         <div className="cyber-plane">
           <div className="grid"></div>
-          <div className="glow"></div>
         </div>
       </div>
     </div>
@@ -682,7 +667,7 @@ function ProcessSection() {
 
   return (
     <section 
-      className="relative py-32 sm:py-48 lg:py-64 bg-[#0e1733] text-white z-30" 
+      className="relative py-32 sm:py-48 lg:py-64 bg-[#0e1733] text-white z-30 overflow-hidden" 
       id="proces"
       style={{ 
         clipPath: 'polygon(0 4vw, 100% 0, 100% calc(100% - 4vw), 0 100%)',
@@ -720,11 +705,11 @@ function ProcessSection() {
                 return (
                   <div key={i} className={`relative flex ${orderClass}`}>
                     <motion.div 
-                      initial={{ opacity: 0, y: 30 }}
-                      whileInView={{ opacity: 1, y: 0 }}
+                      initial={{ opacity: 0, y: 30, z: 0 }}
+                      whileInView={{ opacity: 1, y: 0, z: 0 }}
                       viewport={{ once: true }}
                       transition={{ duration: 0.5, delay: i * 0.1 }}
-                      className="relative flex flex-col bg-[#0a0a0a]/60 backdrop-blur-md border border-white/10 rounded-2xl sm:rounded-3xl p-4 sm:p-6 lg:p-8 hover:bg-[#0a0a0a]/90 hover:border-[#8d32fc]/50 transition-all duration-300 group w-full aspect-square"
+                      className="relative flex flex-col bg-[#0a0a0a]/95 border border-white/10 rounded-2xl sm:rounded-3xl p-4 sm:p-6 lg:p-8 hover:bg-[#0a0a0a] hover:border-[#8d32fc]/50 transition-all duration-300 group w-full aspect-square shadow-2xl"
                     >
                       <div className="flex justify-between items-start mb-3 sm:mb-6">
                         <div className="w-10 h-10 sm:w-14 sm:h-14 rounded-xl sm:rounded-2xl bg-[#8d32fc]/10 flex items-center justify-center text-[#8d32fc] group-hover:scale-110 group-hover:bg-[#8d32fc] group-hover:text-white transition-all duration-300">
