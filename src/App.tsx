@@ -623,7 +623,6 @@ const GridTunnel = () => {
           background-image: 
             repeating-linear-gradient(to left, rgba(141, 50, 252, 0.6), rgba(141, 50, 252, 0.6) 2px, transparent 2px, transparent var(--grid)), 
             repeating-linear-gradient(to bottom, rgba(141, 50, 252, 0.6), rgba(141, 50, 252, 0.6) 2px, transparent 2px, transparent var(--grid));
-          animation: cyber-move 1s linear infinite forwards;
         }
 
         .cyber-plane > *::after {
@@ -640,15 +639,6 @@ const GridTunnel = () => {
           filter: blur(1rem);
           z-index: 1;
           mix-blend-mode: plus-lighter;
-        }
-
-        @keyframes cyber-move {
-          from {
-            transform: translateY(0px);
-          }
-          to {
-            transform: translateY(calc(var(--grid) * var(--dir)));
-          }
         }
       `}</style>
       
