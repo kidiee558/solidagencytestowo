@@ -479,9 +479,9 @@ function HeroContent({ onContactClick }: { onContactClick: () => void }) {
                     
                     <div className="flex flex-col items-start text-left mb-[0.5vw] w-full max-w-[90vw] sm:max-w-none">
                       <div 
-                        className="font-inter-tight text-slate-200 uppercase break-words"
+                        className="font-inter-tight text-slate-200 uppercase whitespace-nowrap"
                         style={{ 
-                          fontSize: 'clamp(0.45rem, 0.35rem + 0.7vw, 1.35rem)',
+                          fontSize: 'clamp(0.42rem, 0.32rem + 0.65vw, 1.3rem)',
                           letterSpacing: '0.05em',
                           fontWeight: '300',
                           lineHeight: '1.2'
@@ -494,7 +494,7 @@ function HeroContent({ onContactClick }: { onContactClick: () => void }) {
                   </div>
                   
                   <div className="flex flex-col items-start w-full">
-                    <span className="text-[9.2vw] sm:text-[9vw] lg:text-[8vw] font-extrabold font-syne sm:whitespace-nowrap tracking-tighter [text-shadow:0_2px_4px_rgba(0,0,0,0.3)] leading-[0.9] max-w-full break-words">
+                    <span className="text-[9vw] sm:text-[9vw] lg:text-[8vw] font-extrabold font-syne sm:whitespace-nowrap tracking-tighter [text-shadow:0_2px_4px_rgba(0,0,0,0.3)] leading-[0.9] max-w-full break-words">
                       MARKETING.
                     </span>
                     <div 
