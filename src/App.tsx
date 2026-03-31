@@ -457,7 +457,7 @@ function PhoneMockup() {
 
 function HeroContent({ onContactClick }: { onContactClick: () => void }) {
   return (
-    <div className="relative min-h-[calc(100svh+24px)] sm:min-h-[calc(100svh+40px)] flex flex-col items-start justify-center pt-32 lg:pt-0 pb-32 lg:pb-24 overflow-hidden z-0">
+    <div className="relative min-h-[90svh] sm:min-h-[95svh] flex flex-col items-start justify-center pt-32 lg:pt-0 pb-16 lg:pb-12 overflow-hidden z-0">
       <div className="w-full px-4 sm:px-6 lg:px-24 xl:px-40 relative z-20 flex flex-col items-start">
         <div className="flex flex-col items-start flex-grow w-full">
           <div className="text-left w-full">
@@ -465,7 +465,7 @@ function HeroContent({ onContactClick }: { onContactClick: () => void }) {
               <h1 className="font-bold text-white tracking-tight leading-[1.1] flex flex-col gap-1 lg:gap-2">
                 <span className="flex flex-col items-start">
                   <div className="flex flex-row items-end gap-4 lg:gap-8">
-                    <span className="inline-flex items-center text-[8vw] sm:text-[9vw] lg:text-[8vw] font-semibold font-syne sm:whitespace-nowrap tracking-tighter [text-shadow:0_2px_4px_rgba(0,0,0,0.3)] leading-[0.9]">
+                    <span className="inline-flex items-center text-[8vw] sm:text-[9vw] lg:text-[8vw] font-semibold font-syne sm:whitespace-nowrap tracking-tighter [text-shadow:0_2px_4px_rgba(0,0,0,0.3)] leading-[0.9] ml-[-0.05em]">
                       S
                       <motion.span
                         animate={{ rotate: 360 }}
@@ -494,7 +494,7 @@ function HeroContent({ onContactClick }: { onContactClick: () => void }) {
                   </div>
                   
                   <div className="flex flex-col items-start w-full">
-                    <span className="text-[9vw] sm:text-[9vw] lg:text-[8vw] font-extrabold font-syne sm:whitespace-nowrap tracking-tighter [text-shadow:0_2px_4px_rgba(0,0,0,0.3)] leading-[0.9] max-w-full break-words">
+                    <span className="text-[9vw] sm:text-[9vw] lg:text-[8vw] font-extrabold font-syne sm:whitespace-nowrap tracking-tighter [text-shadow:0_2px_4px_rgba(0,0,0,0.3)] leading-[0.9] max-w-full break-words ml-[-0.05em]">
                       MARKETING.
                     </span>
                     <div 
@@ -574,7 +574,7 @@ function Hero({ onContactClick, children }: { onContactClick: () => void; childr
 
 function AboutUs() {
   return (
-    <section className="relative w-full py-32 overflow-hidden z-0" id="o-nas">
+    <section className="relative w-full pt-8 pb-32 lg:pt-16 overflow-hidden z-0" id="o-nas">
       <motion.div 
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
