@@ -481,7 +481,7 @@ function HeroContent({ onContactClick }: { onContactClick: () => void }) {
                       <div 
                         className="font-inter-tight text-slate-200 uppercase break-words"
                         style={{ 
-                          fontSize: 'clamp(0.4rem, 0.3rem + 0.6vw, 1.2rem)',
+                          fontSize: 'clamp(0.45rem, 0.35rem + 0.7vw, 1.35rem)',
                           letterSpacing: '0.05em',
                           fontWeight: '300',
                           lineHeight: '1.2'
@@ -490,22 +490,24 @@ function HeroContent({ onContactClick }: { onContactClick: () => void }) {
                         STRONY INTERNETOWE & SKLEPY INTERNETOWE /<br />
                         KAMPANIE GOOGLE ADS & META ADS
                       </div>
-                      <div 
-                        className="font-inter-tight text-slate-400 uppercase mt-0 sm:mt-2 break-words"
-                        style={{ 
-                          fontSize: 'clamp(0.35rem, 0.25rem + 0.4vw, 0.8rem)',
-                          letterSpacing: '0.1em',
-                          fontWeight: '300'
-                        }}
-                      >
-                        LUBLIN / WORLDWIDE - EST. 2018
-                      </div>
                     </div>
                   </div>
                   
-                  <span className="text-[8vw] sm:text-[9vw] lg:text-[8vw] font-extrabold font-syne sm:whitespace-nowrap tracking-tighter [text-shadow:0_2px_4px_rgba(0,0,0,0.3)] leading-[0.9] max-w-full break-words">
-                    MARKETING.
-                  </span>
+                  <div className="flex flex-col items-start w-full">
+                    <span className="text-[9.2vw] sm:text-[9vw] lg:text-[8vw] font-extrabold font-syne sm:whitespace-nowrap tracking-tighter [text-shadow:0_2px_4px_rgba(0,0,0,0.3)] leading-[0.9] max-w-full break-words">
+                      MARKETING.
+                    </span>
+                    <div 
+                      className="font-inter-tight text-slate-400 uppercase mt-2 sm:mt-3 break-words"
+                      style={{ 
+                        fontSize: 'clamp(0.35rem, 0.25rem + 0.4vw, 0.8rem)',
+                        letterSpacing: '0.1em',
+                        fontWeight: '300'
+                      }}
+                    >
+                      LUBLIN / WORLDWIDE - EST. 2018
+                    </div>
+                  </div>
                   
                   <div className="flex flex-col md:flex-row items-start md:items-center gap-6 mt-6 w-full">
                     <div className="flex-1 max-w-[45ch]">
@@ -834,7 +836,7 @@ function ValueProps() {
           letterSpacing: '.02em'
         }}>
           <p className="mb-4">
-            Za każdym projektem stoi prosty cel: tworzenie rozwiązań, które użytkownicy kochają, a firmy wykorzystują do wzrostu. Przez ostatnią dekadę pomogliśmy ponad 300 klientom przekuć idee w nagradzane produkty i witryny, generujące konkretne zyski, w tym sześcioyfrowe przychody.
+            Za każdym projektem stoi prosty cel: tworzenie rozwiązań, które użytkownicy kochają, a firmy wykorzystują do wzrostu. Przez ostatnie 8 lat pomogliśmy ponad 200 klientom przekuć idee w nagradzane produkty i witryny, generujące konkretne zyski, w tym sześciocyfrowe przychody.
           </p>
           <p>
             Pracujemy z pełnym zaangażowaniem i dbałością o detale, pilnując najwyższej jakości na każdym etapie – od pierwszej rozmowy aż po finalne wdrożenie.
