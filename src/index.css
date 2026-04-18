@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Inter+Tight:wght@300;400&family=Syne:wght@400..800&family=Bebas+Neue&family=Barlow+Condensed:ital,wght@1,800&family=Geist+Mono:wght@400&display=swap');
+@import url('https://fonts.cdnfonts.com/css/humane');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-syne: "Syne", sans-serif;
+  --font-humane: "Humane", sans-serif;
+  --font-bebas: "Bebas Neue", sans-serif;
+  --font-barlow: "Barlow Condensed", sans-serif;
+  --font-inter-tight: "Inter Tight", sans-serif;
+  --animate-shimmer: shimmer 3s linear infinite;
+
+  @keyframes shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+  }
+}
+
+.shifting-cards {
+    max-width: 100%;
+    margin: 2rem auto;
+}
+
+.shifting-cards__container {
+    display: flex;
+    justify-content: center;
+    transition: all 0.5s ease-out;
+}
+.text-shimmer {
+  background: linear-gradient(
+    to right, 
+    #c9c0e8 20%, 
+    #ffffff 50%, 
+    #c9c0e8 80%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 3s linear infinite;
+  display: inline-block;
+  padding-bottom: 0.1em;
+  vertical-align: middle;
+}
+
+body {
+  overflow-x: clip;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+}
+.custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
+}
+
+.init-step {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.init-step .options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem; /* Smaller gap for mobile */
+    margin-bottom: 7.6875rem;
+    justify-content: center;
+    width: 100%;
+    max-width: 1200px;
+    padding: 0 1rem;
+}
+
+@media (min-width: 1024px) {
+    .init-step .options {
+        gap: 1.25rem; /* Larger gap for PC */
+    }
+    .init-step .options > button {
+        width: calc(25% - 1.25rem) !important;
+        max-width: none !important;
+    }
+}
+
+@media (max-width: 90.0625em) {
+    .init-step .options {
+        margin-bottom: 3.125rem;
+    }
+}
+
+.init-step__inner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  
+    padding-top: 12.5625rem;
+    padding-bottom: 4.8125rem;
+    height: 100vh;
+    
+    z-index: 2;
+    position: relative;
+}
+
+@media (min-width: 768px) {
+    .init-step__inner {
+        padding-top: 12.5rem;
+        height: auto;
+    }
+}
+
+.continue-btn {
+    grid-column: 1 / -1;
+    width: 220px;
+}
+
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+    display: none;
+}
+.scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
