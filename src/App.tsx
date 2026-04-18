@@ -341,6 +341,7 @@ function Navbar({
               {t('nav.contact')}
             </span>
             <button 
+              aria-label="Otwórz menu nawigacji"
               onClick={() => setIsOpen(!isOpen)} 
               className="w-10 h-10 sm:w-12 sm:h-12 rounded-full border border-white/20 flex items-center justify-center text-white hover:bg-white/10 transition-colors"
             >
@@ -1001,10 +1002,10 @@ function LatestProjects({ onProjectClick }: { onProjectClick: (id: string) => vo
               {lang === 'PL' ? 'Zobacz projekt' : 'View project'}
             </button>
             <div className="flex gap-2">
-              <button onClick={prevMobile} className="w-14 h-14 rounded-full border border-white/30 flex items-center justify-center hover:bg-white/10 transition-colors">
+              <button aria-label="Zobacz poprzedni projekt" onClick={prevMobile} className="w-14 h-14 rounded-full border border-white/30 flex items-center justify-center hover:bg-white/10 transition-colors">
                 <ChevronLeft className="w-7 h-7" />
               </button>
-              <button onClick={nextMobile} className="w-14 h-14 rounded-full border border-white/30 flex items-center justify-center hover:bg-white/10 transition-colors">
+              <button aria-label="Zobacz następny projekt" onClick={nextMobile} className="w-14 h-14 rounded-full border border-white/30 flex items-center justify-center hover:bg-white/10 transition-colors">
                 <ChevronRight className="w-7 h-7" />
               </button>
             </div>
@@ -1324,8 +1325,7 @@ function GlassBoxes({
 
         <div className="flex justify-center mt-2 sm:mt-4">
           <div className="flex gap-4">
-            <button 
-              onClick={() => {
+            <button aria-label="Przewiń ofertę w lewo" onClick={() => {
                 const container = scrollRef.current;
                 if (container && container.children.length > 0) {
                   const firstChild = container.children[0] as HTMLElement;
@@ -1333,13 +1333,11 @@ function GlassBoxes({
                   const scrollAmount = firstChild.offsetWidth + gap;
                   container.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
                 }
-              }} 
-              className="w-14 h-14 rounded-full border border-black/20 flex items-center justify-center hover:bg-black/5 transition-all duration-300 ease-out"
+              }} className="w-14 h-14 rounded-full border border-black/20 flex items-center justify-center hover:bg-black/5 transition-all duration-300 ease-out"
             >
               <ChevronLeft className="w-6 h-6 text-black" strokeWidth={1.5} />
             </button>
-            <button 
-              onClick={() => {
+            <button aria-label="Przewiń ofertę w prawo" onClick={() => {
                 const container = scrollRef.current;
                 if (container && container.children.length > 0) {
                   const firstChild = container.children[0] as HTMLElement;
@@ -1347,8 +1345,7 @@ function GlassBoxes({
                   const scrollAmount = firstChild.offsetWidth + gap;
                   container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
                 }
-              }} 
-              className="w-14 h-14 rounded-full border border-black/20 flex items-center justify-center hover:bg-black/5 transition-all duration-300 ease-out"
+              }} className="w-14 h-14 rounded-full border border-black/20 flex items-center justify-center hover:bg-black/5 transition-all duration-300 ease-out"
             >
               <ChevronRight className="w-6 h-6 text-black" strokeWidth={1.5} />
             </button>
@@ -1498,10 +1495,10 @@ function LatestNews({ onPoradnikClick, onArticleClick }: { onPoradnikClick: () =
 
         <div className="flex flex-col sm:flex-row items-center justify-between gap-6 px-4 sm:px-6 lg:px-8 mt-12">
           <div className="flex gap-4 w-full sm:w-auto justify-center sm:justify-start">
-            <button onClick={() => scroll('left')} className="w-14 h-14 rounded-full border border-black/20 flex items-center justify-center hover:bg-black/5 transition-colors">
+            <button aria-label="Przewiń poradniki w lewo" onClick={() => scroll('left')} className="w-14 h-14 rounded-full border border-black/20 flex items-center justify-center hover:bg-black/5 transition-colors">
               <ChevronLeft className="w-6 h-6 text-black" strokeWidth={1.5} />
             </button>
-            <button onClick={() => scroll('right')} className="w-14 h-14 rounded-full border border-black/20 flex items-center justify-center hover:bg-black/5 transition-colors">
+            <button aria-label="Przewiń poradniki w prawo" onClick={() => scroll('right')} className="w-14 h-14 rounded-full border border-black/20 flex items-center justify-center hover:bg-black/5 transition-colors">
               <ChevronRight className="w-6 h-6 text-black" strokeWidth={1.5} />
             </button>
           </div>
