@@ -478,7 +478,7 @@ function Navbar({
   );
 }
 
-function HeroContent({ onContactClick, onOfferClick }: { onContactClick: () => void, onOfferClick?: () => void }) {
+function HeroContent({ onContactClick }: { onContactClick: () => void }) {
   const { lang } = useLanguage();
   return (
     <div className="relative min-h-[100vh] flex flex-col items-center justify-center pt-32 lg:pt-28 xl:pt-32 pb-16 lg:pb-12 z-20">
@@ -534,7 +534,12 @@ function HeroContent({ onContactClick, onOfferClick }: { onContactClick: () => v
                 <button aria-label="Zamów bezpłatną wycenę w 30 minut" onClick={onContactClick} className="rounded-full border border-white/20 hover:bg-white/40 transition-colors px-[clamp(16px,2vw,32px)] h-[clamp(28px,3.5vw,48px)] flex items-center justify-center text-white text-[clamp(8px,0.7vw,12px)] font-bold uppercase tracking-widest backdrop-blur-sm whitespace-nowrap" style={{ backgroundColor: 'rgba(201, 192, 232, 0.15)' }}>
                   {lang === 'PL' ? 'WYCENA W 30 MIN' : 'QUOTE IN 30 MIN'}
                 </button>
-                <button aria-label="Poznaj naszą pełną ofertę" onClick={() => onOfferClick?.()} className="rounded-full border border-white/20 hover:bg-white/10 transition-colors px-[clamp(16px,2vw,32px)] h-[clamp(28px,3.5vw,48px)] flex items-center justify-center text-white text-[clamp(8px,0.7vw,12px)] font-bold uppercase tracking-widest whitespace-nowrap">
+                <button aria-label="Poznaj naszą pełną ofertę" onClick={() => {
+                  const element = document.getElementById('glass-boxes');
+                  if (element) {
+                    element.scrollIntoView({ behavior: 'smooth' });
+                  }
+                }} className="rounded-full border border-white/20 hover:bg-white/10 transition-colors px-[clamp(16px,2vw,32px)] h-[clamp(28px,3.5vw,48px)] flex items-center justify-center text-white text-[clamp(8px,0.7vw,12px)] font-bold uppercase tracking-widest whitespace-nowrap">
                   {lang === 'PL' ? 'OFERTA' : 'OFFER'}
                 </button>
               </div>
@@ -572,7 +577,12 @@ function HeroContent({ onContactClick, onOfferClick }: { onContactClick: () => v
               <button aria-label="Zamów bezpłatną wycenę w 30 minut" onClick={onContactClick} className="rounded-full border border-white/20 hover:bg-white/40 transition-colors px-6 h-[40px] flex items-center justify-center text-white text-[10px] font-bold uppercase tracking-widest backdrop-blur-sm whitespace-nowrap" style={{ backgroundColor: 'rgba(201, 192, 232, 0.15)' }}>
                 {lang === 'PL' ? 'WYCENA W 30 MIN' : 'QUOTE IN 30 MIN'}
               </button>
-              <button aria-label="Poznaj naszą pełną ofertę" onClick={() => onOfferClick?.()} className="rounded-full border border-white/20 hover:bg-white/10 transition-colors px-6 h-[40px] flex items-center justify-center text-white text-[10px] font-bold uppercase tracking-widest whitespace-nowrap">
+              <button aria-label="Poznaj naszą pełną ofertę" onClick={() => {
+                const element = document.getElementById('glass-boxes');
+                if (element) {
+                  element.scrollIntoView({ behavior: 'smooth' });
+                }
+              }} className="rounded-full border border-white/20 hover:bg-white/10 transition-colors px-6 h-[40px] flex items-center justify-center text-white text-[10px] font-bold uppercase tracking-widest whitespace-nowrap">
                 {lang === 'PL' ? 'OFERTA' : 'OFFER'}
               </button>
             </div>
@@ -584,7 +594,7 @@ function HeroContent({ onContactClick, onOfferClick }: { onContactClick: () => v
   );
 }
 
-function Hero({ onContactClick, onOfferClick, children }: { onContactClick: () => void; onOfferClick?: () => void; children?: React.ReactNode }) {
+function Hero({ onContactClick, children }: { onContactClick: () => void; children?: React.ReactNode }) {
   const posterUrl = 'https://github.com/kidiee558/solidagencytestowo/blob/main/HomepageZdjecieWTle.webp?raw=true';
 
   return (
@@ -607,7 +617,7 @@ function Hero({ onContactClick, onOfferClick, children }: { onContactClick: () =
       </div>
       <div className="absolute inset-0 bg-black/40 z-[1]"></div>
       <div className="relative z-[2]">
-        <HeroContent onContactClick={onContactClick} onOfferClick={onOfferClick} />
+        <HeroContent onContactClick={onContactClick} />
         {children}
       </div>
     </section>
@@ -1709,7 +1719,6 @@ export default function App() {
           <div className="w-full z-0 overflow-hidden">
             <Hero 
               onContactClick={() => handleOpenContactModal()}
-              onOfferClick={() => handleNavigate('websites-offer')}
             >
               <AboutUs />
             </Hero>
